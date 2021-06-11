@@ -1,0 +1,24 @@
+﻿@using System.Web.UI.WebControls
+@model Vidly.ViewModel.RandomMovieViewModel
+<h2>Customers</h2>
+
+@if (@Model.Customers.Count <= 0)
+{
+    <p>No Customer la </p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <tr>
+            <td>
+                <h4>Customers</h4>
+            </td>
+        </tr>
+        @foreach (var customer in @Model.Customers)
+        {
+            <tr>
+                <td>@Html.ActionLink(customer.Name, "Show", "Customers", new {id = customer.Id}, null)</td>
+            </tr>
+        }
+    </table>
+}

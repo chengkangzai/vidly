@@ -1,0 +1,22 @@
+﻿@model List<Vidly.Models.Movie>
+
+<h2>Movies</h2>
+
+@if (@Model.Count <= 0)
+{
+    <p>No Movie la </p>
+}
+else
+{
+    <table class="table table-hover table-striped">
+        <tr>
+            <td><h3>Movie</h3></td>
+        </tr>
+        @foreach (var movie in @Model)
+        {
+            <tr>
+                <td>@movie.Name</td>
+            </tr>
+        }
+    </table>
+}
